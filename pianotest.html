@@ -62,8 +62,8 @@
         </div>
         <script>
             var soundevice = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
-            var amplitude = 0.1;
-            var duration = 600;
+            var amplitude = 0.3;
+            var duration = 3800;
 
             var playnote = (pitch, callback) => {
 
@@ -71,7 +71,12 @@
                 var gainNode = soundevice.createGain();
 
                 gainNode.connect(soundevice.destination);
-                gainNode.gain.value = amplitude;    
+                gainNode.gain.value = amplitude;
+                gainNode.gain.cancelScheduledValues(soundevice.currentTime);
+                gainNode.gain.setValueAtTime(0.0001, soundevice.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(amplitude, soundevice.currentTime + 0.1); //attack
+                gainNode.gain.exponentialRampToValueAtTime(amplitude-(amplitude/2), soundevice.currentTime + 0.1 + 0.15); //decay
+                gainNode.gain.exponentialRampToValueAtTime(0.0001, soundevice.currentTime + 0.1 + 0.15 + 1.5); //release
                 oscillator.connect(gainNode);
                 oscillator.type = "sine";
                 oscillator.frequency.value = pitch;
