@@ -3,17 +3,86 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="description" content="Piano Test by Michael Abia">
+        <meta name="description" content="Piano Test by Michael Anthony Abia">
         <title>Piano Test</title>
         <style>
             body{
                 background: #000000;
             }
+            #top {
+                height: 30vh;
+                padding: 1vh;
+                display: inline-flex;
+                overflow: hidden;
+            }
+            #composer {
+                height: 28vh;
+                width: 70vw;
+                background: #000000;
+                color: #EEEEDD88;
+                font-weight: bold;
+                font-size: 2vw;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-color: #000000;
+                scrollbar-width: thin;
+                resize: none;
+                border: 1px solid #EEEEDD88;
+                border-radius: 10px;
+            }
+            #record {
+                color: #FF000088;
+                cursor: pointer;
+                margin: 1vh;
+                padding: 1vh;
+                height: 5vw;
+                width: 5vw;
+                font-size: 4vw;
+                border: 1px solid #EEEEDD88;
+                border-radius: 10px;
+                text-align: center;
+                justify-content: center;
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+            }
+            #record:hover {
+                color: #FF0000;
+            }
+            #record:active{
+                border: 2px solid #EEEEDD88;
+            }
+            #play {
+                color: #EEEEDD88;
+                cursor: pointer;
+                margin: 1vh;
+                padding: 1vh;
+                height: 5vw;
+                width: 5vw;
+                font-size: 4vw;
+                border: 1px solid #EEEEDD88;
+                border-radius: 10px;
+                text-align: center;
+                justify-content: center;
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+            }
+            #play:hover {
+                color: #EEEEDD;
+            }
+            #play:active {
+                border: 2px solid #EEEEDD88;
+            }
+            #featured {
+                margin: 1vh;
+                padding: 1vh;
+                color: #EEEEDD88;
+            }
             #grid {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
               grid-gap: 0.6vw;
-              height: 90vh;
+              height: 60vh;
               overflow: hidden;
             }
             #grid > div {
@@ -24,41 +93,57 @@
               border-radius: 3px;
               text-align: center;
               overflow: hidden;
+              z-index: 2;
               user-select: none;
                 -webkit-user-select: none;
                 -moz-user-select: none;
             }
             #grid div:active {
                 background: #EEEEDD;
+                z-index: 3;
+            }
+            #grid div:hover {
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
+        <div id="top">
+            <textarea name="name" id="composer" placeholder="Example: C4-D4-E4-F4-G4-A4-B4--C5; C is the key, 4 is the octave, - points to the next key, -- points again creating a delay, ; ends it"></textarea>
+            <div id="controls">
+                <div title="record" id="record" ontouchstart="record()" onmousedown="record()">●</div>
+                <div title="play/pause" id="play" ontouchstart="read()" onmousedown="read()">▶</div>
+            </div>
+            <div id="featured">
+                Featured:
+                <div class="composed">Song by Artist</div>
+            </div>
+        </div>
         <div id="grid">
             <!-- 3rd Octave -->
-            <div ontouchstart="playnote(130.813)" onmousedown="playnote(130.813)">C</div>
-            <div ontouchstart="playnote(146.832)" onmousedown="playnote(146.832)">D</div>
-            <div ontouchstart="playnote(164.814)" onmousedown="playnote(164.814)">E</div>
-            <div ontouchstart="playnote(174.614)" onmousedown="playnote(174.614)">F</div>
-            <div ontouchstart="playnote(195.998)" onmousedown="playnote(195.998)">G</div>
-            <div ontouchstart="playnote(220.000)" onmousedown="playnote(220.000)">A</div>
-            <div ontouchstart="playnote(246.942)" onmousedown="playnote(246.942)">B</div>
+            <div id="c3" ontouchstart="playnote(130.813)" onmousedown="playnote(130.813)">C</div>
+            <div id="d3" ontouchstart="playnote(146.832)" onmousedown="playnote(146.832)">D</div>
+            <div id="e3" ontouchstart="playnote(164.814)" onmousedown="playnote(164.814)">E</div>
+            <div id="f3" ontouchstart="playnote(174.614)" onmousedown="playnote(174.614)">F</div>
+            <div id="g3" ontouchstart="playnote(195.998)" onmousedown="playnote(195.998)">G</div>
+            <div id="a3" ontouchstart="playnote(220.000)" onmousedown="playnote(220.000)">A</div>
+            <div id="b3" ontouchstart="playnote(246.942)" onmousedown="playnote(246.942)">B</div>
             <!-- 4th Octave -->
-            <div ontouchstart="playnote(261.626)" onmousedown="playnote(261.626)">C</div>
-            <div ontouchstart="playnote(293.665)" onmousedown="playnote(293.665)">D</div>
-            <div ontouchstart="playnote(329.628)" onmousedown="playnote(329.628)">E</div>
-            <div ontouchstart="playnote(349.228)" onmousedown="playnote(349.228)">F</div>
-            <div ontouchstart="playnote(391.995)" onmousedown="playnote(391.995)">G</div>
-            <div ontouchstart="playnote(440.000)" onmousedown="playnote(440.000)">A</div>
-            <div ontouchstart="playnote(493.883)" onmousedown="playnote(493.883)">B</div>
+            <div id="c4" ontouchstart="playnote(261.626)" onmousedown="playnote(261.626)">C</div>
+            <div id="d4" ontouchstart="playnote(293.665)" onmousedown="playnote(293.665)">D</div>
+            <div id="e4" ontouchstart="playnote(329.628)" onmousedown="playnote(329.628)">E</div>
+            <div id="f4" ontouchstart="playnote(349.228)" onmousedown="playnote(349.228)">F</div>
+            <div id="g4" ontouchstart="playnote(391.995)" onmousedown="playnote(391.995)">G</div>
+            <div id="a4" ontouchstart="playnote(440.000)" onmousedown="playnote(440.000)">A</div>
+            <div id="b4" ontouchstart="playnote(493.883)" onmousedown="playnote(493.883)">B</div>
             <!-- 5th Octave -->
-            <div ontouchstart="playnote(523.251)" onmousedown="playnote(523.251)">C</div>
-            <div ontouchstart="playnote(587.330)" onmousedown="playnote(587.330)">D</div>
-            <div ontouchstart="playnote(659.255)" onmousedown="playnote(659.255)">E</div>
-            <div ontouchstart="playnote(698.456)" onmousedown="playnote(698.456)">F</div>
-            <div ontouchstart="playnote(783.991)" onmousedown="playnote(783.991)">G</div>
-            <div ontouchstart="playnote(880.000)" onmousedown="playnote(880.000)">A</div>
-            <div ontouchstart="playnote(987.767)" onmousedown="playnote(987.767)">B</div>
+            <div id="c5" ontouchstart="playnote(523.251)" onmousedown="playnote(523.251)">C</div>
+            <div id="d5" ontouchstart="playnote(587.330)" onmousedown="playnote(587.330)">D</div>
+            <div id="e5" ontouchstart="playnote(659.255)" onmousedown="playnote(659.255)">E</div>
+            <div id="f5" ontouchstart="playnote(698.456)" onmousedown="playnote(698.456)">F</div>
+            <div id="g5" ontouchstart="playnote(783.991)" onmousedown="playnote(783.991)">G</div>
+            <div id="a5" ontouchstart="playnote(880.000)" onmousedown="playnote(880.000)">A</div>
+            <div id="b5" ontouchstart="playnote(987.767)" onmousedown="playnote(987.767)">B</div>
         </div>
         <script>
             var soundevice = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
@@ -87,6 +172,239 @@
                 
                 oscillator.start(soundevice.currentTime);
                 oscillator.stop(soundevice.currentTime + ((duration || 500) / 1000));
+            };
+
+            var getfrequency = (letter, number) => {
+                switch (letter) {
+                    case "c":
+                            return (32.703*(2**(number-1)));
+                        break;
+                    case "d":
+                            return (36.708*(2**(number-1)));
+                        break;
+                    case "e":
+                            return (41.203*(2**(number-1)));
+                        break;
+                    case "f":
+                            return (43.654*(2**(number-1)));
+                        break;
+                    case "g":
+                            return (48.999*(2**(number-1)));
+                        break;
+                    case "a":
+                            return (55.000*(2**(number-1)));
+                        break;
+                    case "b":
+                            return (61.735*(2**(number-1)));
+                        break;
+                
+                    default:
+                        return 0;
+                        break;
+                }
+            }
+
+            var recording = false;
+            var reading = false;
+
+            var record = () => {
+                //stop reading and toggle recording
+                reading = false;
+                document.getElementById("play").style.background = "#000000";
+                document.getElementById("play").style.color = "EEEEDD";
+                if (recording){
+                    recording = false;
+                    document.getElementById("record").style.background = "#000000";
+                    document.getElementById("record").style.color = "#FF000088";
+                } else {
+                    recording = true;
+                    document.getElementById("record").style.background = "#EEEEDD44";
+                    document.getElementById("record").style.color = "#FF0000";
+                }
+            }
+
+            var read = () => {
+                //stop recording and toggle reading
+                recording = false;
+                document.getElementById("record").style.background = "#000000";
+                document.getElementById("record").style.color = "#FF000088";
+                if (reading){
+                    reading = false;
+                    document.getElementById("play").style.background = "#000000";
+                    document.getElementById("play").style.color = "EEEEDD";
+                } else {
+                    reading = true;
+                    document.getElementById("play").style.background = "#EEEEDD44";
+                    document.getElementById("play").style.color = "#EEEEDD88";
+                }
+                 
+            }
+
+            var kboctave = 4;
+            var pressedkeys = {};
+
+            window.onkeydown = input = (e) => {
+                
+                //set the key to the octave number being held
+                if (!isNaN(e.key) && e.key <= 7 && e.key >= 1){
+                    document.getElementById("c"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("d"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("e"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("f"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("g"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("a"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("b"+kboctave).style.background = "#FFFFEE";
+                    kboctave = e.key;
+                }
+
+                //for chords consider mixing the frequencies of the pressed keys to make chord frequencies BEFORE calling playnote
+                switch ((e.key+"").toLowerCase()) {
+                    case "z":
+                            if (!pressedkeys["c"+kboctave]){
+                                playnote(getfrequency("c", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("c"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["c"+kboctave] = true;
+                            }
+                        break;
+                    case "x":
+                            if (!pressedkeys["d"+kboctave]){
+                                playnote(getfrequency("d", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("d"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["d"+kboctave] = true;
+                            }
+                        break;
+                    case "c":
+                            if (!pressedkeys["e"+kboctave]){
+                                playnote(getfrequency("e", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("e"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["e"+kboctave] = true;
+                            }
+                        break;
+                    case "v":
+                            if (!pressedkeys["f"+kboctave]){
+                                playnote(getfrequency("f", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("f"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["f"+kboctave] = true;
+                            }
+                        break;
+                    case "b":
+                            if (!pressedkeys["g"+kboctave]){
+                                playnote(getfrequency("g", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("g"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["g"+kboctave] = true;
+                            }
+                        break;
+                    case "n":
+                            if (!pressedkeys["a"+kboctave]){
+                                playnote(getfrequency("a", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("a"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["a"+kboctave] = true;
+                            }
+                        break;
+                    case "m":
+                            if (!pressedkeys["b"+kboctave]){
+                                playnote(getfrequency("b", kboctave));
+                                if (kboctave >= 3 && kboctave <=5){
+                                    document.getElementById("b"+kboctave).style.background = "#EEEEDD";
+                                }
+                                pressedkeys["b"+kboctave] = true;
+                            }
+                        break;
+                
+                    default:
+                        break;
+                }
+                
+            };
+            
+            window.onkeyup = input = (e) => {
+
+                //set the octave and color back to normal when released
+                if (!isNaN(e.key) && e.key <= 7 && e.key >= 1 && kboctave == e.key){
+                    document.getElementById("c"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("d"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("e"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("f"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("g"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("a"+kboctave).style.background = "#FFFFEE";
+                    document.getElementById("b"+kboctave).style.background = "#FFFFEE";
+                    kboctave = 4;
+                }
+                
+                //set the key color back to normal on release
+                switch ((e.key+"").toLowerCase()) {
+                    case "z":
+                        if (pressedkeys["c"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("c"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["c"+kboctave];
+                        }
+                        break;
+                    case "x":
+                        if (pressedkeys["d"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("d"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["d"+kboctave];
+                        }
+                        break;
+                    case "c":
+                        if (pressedkeys["e"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("e"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["e"+kboctave];
+                        }
+                        break;
+                    case "v":
+                        if (pressedkeys["f"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("f"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["f"+kboctave];
+                        }
+                        break;
+                    case "b":
+                        if (pressedkeys["g"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("g"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["g"+kboctave];
+                        }
+                        break;
+                    case "n":
+                        if (pressedkeys["a"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("a"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["a"+kboctave];
+                        }
+                        break;
+                    case "m":
+                        if (pressedkeys["b"+kboctave]){
+                            if (kboctave >= 3 && kboctave <=5){
+                                document.getElementById("b"+kboctave).style.background = "#FFFFEE";
+                            }
+                            delete pressedkeys["b"+kboctave];
+                        }
+                        break;
+                            
+                    default:
+                        break;
+                }
             };
         </script>
     </body>
