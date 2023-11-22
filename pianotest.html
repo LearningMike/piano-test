@@ -109,48 +109,108 @@
     </head>
     <body>
         <div id="top">
-            <textarea name="name" id="composer" placeholder="Example: C4-D4-E4-F4-G4-A4-B4--C5; C is the key, 4 is the octave, - points to the next key, -- points again creating a delay, ; ends it"></textarea>
+            <textarea name="composer" id="composer" placeholder="Example: C4-D4-E4-F4-G4-A4-B4--C5; C is the key, 4 is the octave, - points to the next key, -- points again creating a delay, ; ends it"></textarea>
             <div id="controls">
                 <div title="record" id="record" ontouchstart="record()" onmousedown="record()">●</div>
                 <div title="play/pause" id="play" ontouchstart="read()" onmousedown="read()">▶</div>
             </div>
             <div id="featured">
                 Featured:
-                <div class="composed">Song by Artist</div>
+                <div class="composed">Piece by Artist</div>
             </div>
         </div>
         <div id="grid">
             <!-- 3rd Octave -->
-            <div id="c3" ontouchstart="playnote(130.813)" onmousedown="playnote(130.813)">C</div>
-            <div id="d3" ontouchstart="playnote(146.832)" onmousedown="playnote(146.832)">D</div>
-            <div id="e3" ontouchstart="playnote(164.814)" onmousedown="playnote(164.814)">E</div>
-            <div id="f3" ontouchstart="playnote(174.614)" onmousedown="playnote(174.614)">F</div>
-            <div id="g3" ontouchstart="playnote(195.998)" onmousedown="playnote(195.998)">G</div>
-            <div id="a3" ontouchstart="playnote(220.000)" onmousedown="playnote(220.000)">A</div>
-            <div id="b3" ontouchstart="playnote(246.942)" onmousedown="playnote(246.942)">B</div>
+            <div id="c3" ontouchstart="playnote('c', 3)" onmousedown="playnote('c', 3)">C</div>
+            <div id="d3" ontouchstart="playnote('d', 3)" onmousedown="playnote('d', 3)">D</div>
+            <div id="e3" ontouchstart="playnote('e', 3)" onmousedown="playnote('e', 3)">E</div>
+            <div id="f3" ontouchstart="playnote('f', 3)" onmousedown="playnote('f', 3)">F</div>
+            <div id="g3" ontouchstart="playnote('g', 3)" onmousedown="playnote('g', 3)">G</div>
+            <div id="a3" ontouchstart="playnote('a', 3)" onmousedown="playnote('a', 3)">A</div>
+            <div id="b3" ontouchstart="playnote('b', 3)" onmousedown="playnote('b', 3)">B</div>
             <!-- 4th Octave -->
-            <div id="c4" ontouchstart="playnote(261.626)" onmousedown="playnote(261.626)">C</div>
-            <div id="d4" ontouchstart="playnote(293.665)" onmousedown="playnote(293.665)">D</div>
-            <div id="e4" ontouchstart="playnote(329.628)" onmousedown="playnote(329.628)">E</div>
-            <div id="f4" ontouchstart="playnote(349.228)" onmousedown="playnote(349.228)">F</div>
-            <div id="g4" ontouchstart="playnote(391.995)" onmousedown="playnote(391.995)">G</div>
-            <div id="a4" ontouchstart="playnote(440.000)" onmousedown="playnote(440.000)">A</div>
-            <div id="b4" ontouchstart="playnote(493.883)" onmousedown="playnote(493.883)">B</div>
+            <div id="c4" ontouchstart="playnote('c', 4)" onmousedown="playnote('c', 4)">C</div>
+            <div id="d4" ontouchstart="playnote('d', 4)" onmousedown="playnote('d', 4)">D</div>
+            <div id="e4" ontouchstart="playnote('e', 4)" onmousedown="playnote('e', 4)">E</div>
+            <div id="f4" ontouchstart="playnote('f', 4)" onmousedown="playnote('f', 4)">F</div>
+            <div id="g4" ontouchstart="playnote('g', 4)" onmousedown="playnote('g', 4)">G</div>
+            <div id="a4" ontouchstart="playnote('a', 4)" onmousedown="playnote('a', 4)">A</div>
+            <div id="b4" ontouchstart="playnote('b', 4)" onmousedown="playnote('b', 4)">B</div>
             <!-- 5th Octave -->
-            <div id="c5" ontouchstart="playnote(523.251)" onmousedown="playnote(523.251)">C</div>
-            <div id="d5" ontouchstart="playnote(587.330)" onmousedown="playnote(587.330)">D</div>
-            <div id="e5" ontouchstart="playnote(659.255)" onmousedown="playnote(659.255)">E</div>
-            <div id="f5" ontouchstart="playnote(698.456)" onmousedown="playnote(698.456)">F</div>
-            <div id="g5" ontouchstart="playnote(783.991)" onmousedown="playnote(783.991)">G</div>
-            <div id="a5" ontouchstart="playnote(880.000)" onmousedown="playnote(880.000)">A</div>
-            <div id="b5" ontouchstart="playnote(987.767)" onmousedown="playnote(987.767)">B</div>
+            <div id="c5" ontouchstart="playnote('c', 5)" onmousedown="playnote('c', 5)">C</div>
+            <div id="d5" ontouchstart="playnote('d', 5)" onmousedown="playnote('d', 5)">D</div>
+            <div id="e5" ontouchstart="playnote('e', 5)" onmousedown="playnote('e', 5)">E</div>
+            <div id="f5" ontouchstart="playnote('f', 5)" onmousedown="playnote('f', 5)">F</div>
+            <div id="g5" ontouchstart="playnote('g', 5)" onmousedown="playnote('g', 5)">G</div>
+            <div id="a5" ontouchstart="playnote('a', 5)" onmousedown="playnote('a', 5)">A</div>
+            <div id="b5" ontouchstart="playnote('b', 5)" onmousedown="playnote('b', 5)">B</div>
         </div>
         <script>
+            /**
+             * ©️ Michael Abia
+            */
             var soundevice = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
-            var amplitude = 0.3;
+            var amplitude = 0.3; //might add controls for this
             var duration = 3800;
+            var instrument = "piano"; //this too
 
-            var playnote = (pitch, callback) => {
+            var playnote = (note, octave, callback) => {
+
+                if (recording){
+                    //append key played to the composer
+                    var piece = document.getElementById("composer").value;
+                    if (piece.length == 0){
+                        document.getElementById("composer").value = note + octave + ";";
+                    } else if (piece.endsWith(";")) {
+                        document.getElementById("composer").value = piece.replace(";", "-") + note + octave + ";";
+                    }
+                }
+
+                /**
+                 * C0 = 16.35160, A4 = 440 [Equal Temperament]
+                 * Frequency = 16.35160*(1.05946309436**((note-1)+(12*octave)))
+                 * note is from 1 representing C to 12 representing B
+                 * octave is from 0-8
+                 * MIDI = (note-1) + (12*(octave+1))
+                */
+
+                switch (note) {
+                    case "c":
+                            var pitch = (32.703*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "d":
+                            var pitch = (36.708*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "e":
+                            var pitch =  (41.203*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "f":
+                            var pitch =  (43.654*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "g":
+                            var pitch =  (48.999*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "a":
+                            var pitch =  (55.000*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                    case "b":
+                            var pitch =  (61.735*(2**(octave-1)));
+                            var midinum = (note-1) + (12*(octave+1));
+                        break;
+                
+                    default:
+                        var pitch = 0;
+                        var midinum = 0;
+                        break;
+                }
+
+                //for later: more instruments?
 
                 var oscillator = soundevice.createOscillator();
                 var gainNode = soundevice.createGain();
@@ -159,9 +219,11 @@
                 gainNode.gain.value = amplitude;
                 gainNode.gain.cancelScheduledValues(soundevice.currentTime);
                 gainNode.gain.setValueAtTime(0.0001, soundevice.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(amplitude, soundevice.currentTime + 0.1); //attack
-                gainNode.gain.exponentialRampToValueAtTime(amplitude-(amplitude/2), soundevice.currentTime + 0.1 + 0.15); //decay
-                gainNode.gain.exponentialRampToValueAtTime(0.0001, soundevice.currentTime + 0.1 + 0.15 + 1.5); //release
+                if (instrument == "piano") {
+                    gainNode.gain.exponentialRampToValueAtTime(amplitude, soundevice.currentTime + 0.1); //attack
+                    gainNode.gain.exponentialRampToValueAtTime(amplitude-(amplitude/2), soundevice.currentTime + 0.1 + 0.15); //decay
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, soundevice.currentTime + 0.1 + 0.15 + 1.5); //release
+                }
                 oscillator.connect(gainNode);
                 oscillator.type = "sine";
                 oscillator.frequency.value = pitch;
@@ -173,36 +235,6 @@
                 oscillator.start(soundevice.currentTime);
                 oscillator.stop(soundevice.currentTime + ((duration || 500) / 1000));
             };
-
-            var getfrequency = (letter, number) => {
-                switch (letter) {
-                    case "c":
-                            return (32.703*(2**(number-1)));
-                        break;
-                    case "d":
-                            return (36.708*(2**(number-1)));
-                        break;
-                    case "e":
-                            return (41.203*(2**(number-1)));
-                        break;
-                    case "f":
-                            return (43.654*(2**(number-1)));
-                        break;
-                    case "g":
-                            return (48.999*(2**(number-1)));
-                        break;
-                    case "a":
-                            return (55.000*(2**(number-1)));
-                        break;
-                    case "b":
-                            return (61.735*(2**(number-1)));
-                        break;
-                
-                    default:
-                        return 0;
-                        break;
-                }
-            }
 
             var recording = false;
             var reading = false;
@@ -216,10 +248,16 @@
                     recording = false;
                     document.getElementById("record").style.background = "#000000";
                     document.getElementById("record").style.color = "#FF000088";
+                    document.getElementById("composer").style.background = "#000000";
+                    document.getElementById("composer").style.cursor = "text";
+                    document.getElementById("composer").removeAttribute("readonly");
                 } else {
                     recording = true;
                     document.getElementById("record").style.background = "#EEEEDD44";
                     document.getElementById("record").style.color = "#FF0000";
+                    document.getElementById("composer").style.background = "#EEEEDD44";
+                    document.getElementById("composer").style.cursor = "not-allowed";
+                    document.getElementById("composer").setAttribute("readonly", "true");
                 }
             }
 
@@ -232,10 +270,122 @@
                     reading = false;
                     document.getElementById("play").style.background = "#000000";
                     document.getElementById("play").style.color = "EEEEDD";
+                    document.getElementById("composer").style.background = "#000000";
+                    document.getElementById("composer").style.cursor = "text";
+                    document.getElementById("composer").removeAttribute("readonly");
+                    
                 } else {
                     reading = true;
                     document.getElementById("play").style.background = "#EEEEDD44";
                     document.getElementById("play").style.color = "#EEEEDD88";
+                    document.getElementById("composer").style.background = "#EEEEDD44";
+                    document.getElementById("composer").style.cursor = "not-allowed";
+                    document.getElementById("composer").setAttribute("readonly", "true");
+
+                    var piece = document.getElementById("composer").value.toLowerCase();
+                    var count = 0;
+                    var end = piece.length - 1;
+                    var reader = 0;
+
+                    var isnote = (letter) => {
+                        switch (letter) {
+                            case "c":
+                                return true;
+                                break;
+
+                            case "d":
+                                return true;
+                                break;
+
+                            case "e":
+                                return true;
+                                break;
+                            
+                            case "f":
+                                return true;
+                                break;
+                            
+                            case "g":
+                                return true;
+                                break;
+                            
+                            case "a":
+                                return true;
+                                break;
+                            
+                            case "b":
+                                return true;
+                                break;
+                        
+                            default:
+                                return false;
+                                break;
+                        }
+                    }
+
+                    if (end >= 2){
+
+                        var interval = setInterval(() => {
+
+                            reader = count % end;
+                            //console.log("count:" + count + " reader:"+reader);
+
+                            if (isnote(piece[reader])) {
+
+                                //check for Chords, 4 keys maximum
+                                if (isnote(piece[reader+2]) && isnote(piece[reader+4]) && isnote(piece[reader+6])) {
+
+                                    //4 keys
+                                    playnote(piece[reader], parseInt(piece[reader+1]));
+                                    playnote(piece[reader+2], parseInt(piece[reader+3]));
+                                    playnote(piece[reader+4], parseInt(piece[reader+5]));
+                                    playnote(piece[reader+6], parseInt(piece[reader+7]));
+                                    count += 8;
+
+                                } else if (isnote(piece[reader+2]) && isnote(piece[reader+4])){
+
+                                    //3 keys
+                                    playnote(piece[reader], parseInt(piece[reader+1]));
+                                    playnote(piece[reader+2], parseInt(piece[reader+3]));
+                                    playnote(piece[reader+4], parseInt(piece[reader+5]));
+                                    count += 6;
+
+                                } else if (isnote(piece[reader+2])){
+
+                                    //2 keys
+                                    playnote(piece[reader], parseInt(piece[reader+1]));
+                                    playnote(piece[reader+2], parseInt(piece[reader+3]));
+                                    count += 4;
+
+                                } else {
+
+                                    //1 key
+                                    playnote(piece[reader], parseInt(piece[reader+1]));
+                                    count += 2;
+                                    console.log(piece[reader] + " " + piece[reader+1]);
+
+                                }
+                            } else if (piece[reader] == "-"){
+                                count +=1;
+                            } else if (parseInt(piece[reader]) >= 1 && parseInt(piece[reader]) <= 7){
+                                count += 1;
+                            } else {
+                                console.log("ERROR: Cannot understand your music ;-)");
+                                clearInterval(interval);
+                                read(); //toggle back off
+                            }
+
+                            if((piece.endsWith(";") && count == end)){
+                                clearInterval(interval);
+                                read(); //toggle back off
+                            }
+
+                            if(!reading){
+                                clearInterval(interval);
+                            }
+
+                        }, 100);
+                    }
                 }
                  
             }
@@ -247,22 +397,15 @@
                 
                 //set the key to the octave number being held
                 if (!isNaN(e.key) && e.key <= 7 && e.key >= 1){
-                    document.getElementById("c"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("d"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("e"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("f"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("g"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("a"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("b"+kboctave).style.background = "#FFFFEE";
                     kboctave = e.key;
                 }
 
-                //for chords consider mixing the frequencies of the pressed keys to make chord frequencies BEFORE calling playnote
+                //set the key color and play note
                 switch ((e.key+"").toLowerCase()) {
                     case "z":
                             if (!pressedkeys["c"+kboctave]){
-                                playnote(getfrequency("c", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("c", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("c"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["c"+kboctave] = true;
@@ -270,8 +413,8 @@
                         break;
                     case "x":
                             if (!pressedkeys["d"+kboctave]){
-                                playnote(getfrequency("d", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("d", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("d"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["d"+kboctave] = true;
@@ -279,8 +422,8 @@
                         break;
                     case "c":
                             if (!pressedkeys["e"+kboctave]){
-                                playnote(getfrequency("e", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("e", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("e"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["e"+kboctave] = true;
@@ -288,8 +431,8 @@
                         break;
                     case "v":
                             if (!pressedkeys["f"+kboctave]){
-                                playnote(getfrequency("f", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("f", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("f"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["f"+kboctave] = true;
@@ -297,8 +440,8 @@
                         break;
                     case "b":
                             if (!pressedkeys["g"+kboctave]){
-                                playnote(getfrequency("g", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("g", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("g"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["g"+kboctave] = true;
@@ -306,8 +449,8 @@
                         break;
                     case "n":
                             if (!pressedkeys["a"+kboctave]){
-                                playnote(getfrequency("a", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("a", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("a"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["a"+kboctave] = true;
@@ -315,8 +458,8 @@
                         break;
                     case "m":
                             if (!pressedkeys["b"+kboctave]){
-                                playnote(getfrequency("b", kboctave));
-                                if (kboctave >= 3 && kboctave <=5){
+                                playnote("b", kboctave);
+                                if (kboctave >= 3 && kboctave <= 5){
                                     document.getElementById("b"+kboctave).style.background = "#EEEEDD";
                                 }
                                 pressedkeys["b"+kboctave] = true;
@@ -331,15 +474,17 @@
             
             window.onkeyup = input = (e) => {
 
-                //set the octave and color back to normal when released
+                //set the octave and color back to normal when octave is released
                 if (!isNaN(e.key) && e.key <= 7 && e.key >= 1 && kboctave == e.key){
-                    document.getElementById("c"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("d"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("e"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("f"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("g"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("a"+kboctave).style.background = "#FFFFEE";
-                    document.getElementById("b"+kboctave).style.background = "#FFFFEE";
+                    if (kboctave >= 3 && kboctave <= 5){
+                        document.getElementById("c"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("d"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("e"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("f"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("g"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("a"+kboctave).style.background = "#FFFFEE";
+                        document.getElementById("b"+kboctave).style.background = "#FFFFEE";
+                    }
                     kboctave = 4;
                 }
                 
@@ -347,7 +492,7 @@
                 switch ((e.key+"").toLowerCase()) {
                     case "z":
                         if (pressedkeys["c"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("c"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["c"+kboctave];
@@ -355,7 +500,7 @@
                         break;
                     case "x":
                         if (pressedkeys["d"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("d"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["d"+kboctave];
@@ -363,7 +508,7 @@
                         break;
                     case "c":
                         if (pressedkeys["e"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("e"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["e"+kboctave];
@@ -371,7 +516,7 @@
                         break;
                     case "v":
                         if (pressedkeys["f"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("f"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["f"+kboctave];
@@ -379,7 +524,7 @@
                         break;
                     case "b":
                         if (pressedkeys["g"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("g"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["g"+kboctave];
@@ -387,7 +532,7 @@
                         break;
                     case "n":
                         if (pressedkeys["a"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("a"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["a"+kboctave];
@@ -395,7 +540,7 @@
                         break;
                     case "m":
                         if (pressedkeys["b"+kboctave]){
-                            if (kboctave >= 3 && kboctave <=5){
+                            if (kboctave >= 3 && kboctave <= 5){
                                 document.getElementById("b"+kboctave).style.background = "#FFFFEE";
                             }
                             delete pressedkeys["b"+kboctave];
@@ -404,6 +549,15 @@
                             
                     default:
                         break;
+                }
+                if (recording && e.key == " ") {
+                    var piece = document.getElementById("composer").value;
+                    if (piece.length == 0){
+                        document.getElementById("composer").value = "-;";
+                    } else if (piece.endsWith(";")) {
+                        document.getElementById("composer").value = piece.replace(";", "-") + ";";
+                        
+                    }
                 }
             };
         </script>
