@@ -29,6 +29,25 @@
                 border: 1px solid #EEEEDD88;
                 border-radius: 10px;
             }
+            #featured {
+                font-size: 3vh;
+            }
+            #ftitle {
+                border-bottom: 1px dotted #EEEEDD88;
+            }
+            .composed {
+                border-bottom: 1px dotted #EEEEDD88;
+                font-size: 2.5vh;
+                color: #EEEEDD88;
+            }
+            .composed:hover{
+                color: #EEEEDD;
+                cursor: pointer;
+            }
+            .composed:active{
+                color: #EEEEDD;
+                cursor: pointer;
+            }
             #record {
                 color: #FF000088;
                 cursor: pointer;
@@ -111,39 +130,40 @@
         <div id="top">
             <textarea name="composer" id="composer" placeholder="Example: C4-D4-E4-F4-G4-A4-B4--C5; C is the key, 4 is the octave, - points to the next key, -- points again creating a delay, ; ends it"></textarea>
             <div id="controls">
-                <div title="record" id="record" ontouchstart="record()" onmousedown="record()">●</div>
-                <div title="play/pause" id="play" ontouchstart="read()" onmousedown="read()">▶</div>
+                <div title="record" id="record" onmousedown="record()">●</div>
+                <div title="play/pause" id="play" onmousedown="read()">▶</div>
             </div>
             <div id="featured">
-                Featured:
-                <div class="composed">Piece by Artist</div>
+                <div id="ftitle">Featured:</div>
+                <div class="composed" onmousedown="sample('beethoven')" >Für Elise - Ludwig Van Beethoven</div>
+                <div class="composed" onmousedown="sample('titanic')" >My Heart Will Go On - Titanic</div>
             </div>
         </div>
         <div id="grid">
             <!-- 3rd Octave -->
-            <div id="c3" ontouchstart="playnote('c', 3)" onmousedown="playnote('c', 3)">C</div>
-            <div id="d3" ontouchstart="playnote('d', 3)" onmousedown="playnote('d', 3)">D</div>
-            <div id="e3" ontouchstart="playnote('e', 3)" onmousedown="playnote('e', 3)">E</div>
-            <div id="f3" ontouchstart="playnote('f', 3)" onmousedown="playnote('f', 3)">F</div>
-            <div id="g3" ontouchstart="playnote('g', 3)" onmousedown="playnote('g', 3)">G</div>
-            <div id="a3" ontouchstart="playnote('a', 3)" onmousedown="playnote('a', 3)">A</div>
-            <div id="b3" ontouchstart="playnote('b', 3)" onmousedown="playnote('b', 3)">B</div>
+            <div id="c3" onmousedown="playnote('c', 3)">C</div>
+            <div id="d3" onmousedown="playnote('d', 3)">D</div>
+            <div id="e3" onmousedown="playnote('e', 3)">E</div>
+            <div id="f3" onmousedown="playnote('f', 3)">F</div>
+            <div id="g3" onmousedown="playnote('g', 3)">G</div>
+            <div id="a3" onmousedown="playnote('a', 3)">A</div>
+            <div id="b3" onmousedown="playnote('b', 3)">B</div>
             <!-- 4th Octave -->
-            <div id="c4" ontouchstart="playnote('c', 4)" onmousedown="playnote('c', 4)">C</div>
-            <div id="d4" ontouchstart="playnote('d', 4)" onmousedown="playnote('d', 4)">D</div>
-            <div id="e4" ontouchstart="playnote('e', 4)" onmousedown="playnote('e', 4)">E</div>
-            <div id="f4" ontouchstart="playnote('f', 4)" onmousedown="playnote('f', 4)">F</div>
-            <div id="g4" ontouchstart="playnote('g', 4)" onmousedown="playnote('g', 4)">G</div>
-            <div id="a4" ontouchstart="playnote('a', 4)" onmousedown="playnote('a', 4)">A</div>
-            <div id="b4" ontouchstart="playnote('b', 4)" onmousedown="playnote('b', 4)">B</div>
+            <div id="c4" onmousedown="playnote('c', 4)">C</div>
+            <div id="d4" onmousedown="playnote('d', 4)">D</div>
+            <div id="e4" onmousedown="playnote('e', 4)">E</div>
+            <div id="f4" onmousedown="playnote('f', 4)">F</div>
+            <div id="g4" onmousedown="playnote('g', 4)">G</div>
+            <div id="a4" onmousedown="playnote('a', 4)">A</div>
+            <div id="b4" onmousedown="playnote('b', 4)">B</div>
             <!-- 5th Octave -->
-            <div id="c5" ontouchstart="playnote('c', 5)" onmousedown="playnote('c', 5)">C</div>
-            <div id="d5" ontouchstart="playnote('d', 5)" onmousedown="playnote('d', 5)">D</div>
-            <div id="e5" ontouchstart="playnote('e', 5)" onmousedown="playnote('e', 5)">E</div>
-            <div id="f5" ontouchstart="playnote('f', 5)" onmousedown="playnote('f', 5)">F</div>
-            <div id="g5" ontouchstart="playnote('g', 5)" onmousedown="playnote('g', 5)">G</div>
-            <div id="a5" ontouchstart="playnote('a', 5)" onmousedown="playnote('a', 5)">A</div>
-            <div id="b5" ontouchstart="playnote('b', 5)" onmousedown="playnote('b', 5)">B</div>
+            <div id="c5" onmousedown="playnote('c', 5)">C</div>
+            <div id="d5" onmousedown="playnote('d', 5)">D</div>
+            <div id="e5" onmousedown="playnote('e', 5)">E</div>
+            <div id="f5" onmousedown="playnote('f', 5)">F</div>
+            <div id="g5" onmousedown="playnote('g', 5)">G</div>
+            <div id="a5" onmousedown="playnote('a', 5)">A</div>
+            <div id="b5" onmousedown="playnote('b', 5)">B</div>
         </div>
         <script>
             /**
@@ -220,9 +240,10 @@
                 gainNode.gain.cancelScheduledValues(soundevice.currentTime);
                 gainNode.gain.setValueAtTime(0.0001, soundevice.currentTime);
                 if (instrument == "piano") {
+                    //i know it still doesn't sound like a piano, i just can't find someone who recorded the envelope accurately
                     gainNode.gain.exponentialRampToValueAtTime(amplitude, soundevice.currentTime + 0.1); //attack
-                    gainNode.gain.exponentialRampToValueAtTime(amplitude-(amplitude/2), soundevice.currentTime + 0.1 + 0.15); //decay
-                    gainNode.gain.exponentialRampToValueAtTime(0.0001, soundevice.currentTime + 0.1 + 0.15 + 1.5); //release
+                    gainNode.gain.exponentialRampToValueAtTime(amplitude-(amplitude/2), soundevice.currentTime + 0.1 + 0.1); //decay
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, soundevice.currentTime + 0.1 + 0.15 + 1.8); //release
                 }
                 oscillator.connect(gainNode);
                 oscillator.type = "sine";
@@ -342,6 +363,10 @@
                                     playnote(piece[reader+6], parseInt(piece[reader+7]));
                                     count += 8;
 
+                                    //capitalize played notes
+                                    piece = piece.substring(0, reader).toLowerCase() + piece[reader].toUpperCase() + piece[reader+1] + piece[reader+2].toUpperCase() + piece[reader+3] + piece[reader+4].toUpperCase() + piece[reader+5] + piece[reader+6].toUpperCase() + piece[reader+7] + piece.substring(reader+8).toLowerCase();
+                                    document.getElementById("composer").value = piece;
+
                                 } else if (isnote(piece[reader+2]) && isnote(piece[reader+4])){
 
                                     //3 keys
@@ -350,6 +375,10 @@
                                     playnote(piece[reader+4], parseInt(piece[reader+5]));
                                     count += 6;
 
+                                    //capitalize played notes
+                                    piece = piece.substring(0, reader).toLowerCase() + piece[reader].toUpperCase() + piece[reader+1] + piece[reader+2].toUpperCase() + piece[reader+3] + piece[reader+4].toUpperCase() + piece[reader+5] + piece.substring(reader+6).toLowerCase();
+                                    document.getElementById("composer").value = piece;
+
                                 } else if (isnote(piece[reader+2])){
 
                                     //2 keys
@@ -357,13 +386,19 @@
                                     playnote(piece[reader+2], parseInt(piece[reader+3]));
                                     count += 4;
 
+                                    //capitalize played notes
+                                    piece = piece.substring(0, reader).toLowerCase() + piece[reader].toUpperCase() + piece[reader+1] + piece[reader+2].toUpperCase() + piece[reader+3] + piece.substring(reader+4).toLowerCase();
+                                    document.getElementById("composer").value = piece;
+
                                 } else {
 
                                     //1 key
                                     playnote(piece[reader], parseInt(piece[reader+1]));
                                     count += 2;
-                                    console.log(piece[reader] + " " + piece[reader+1]);
-
+                                    
+                                    //capitalize played notes
+                                    piece = piece.substring(0, reader).toLowerCase() + piece[reader].toUpperCase() + piece[reader+1] + piece.substring(reader+2).toLowerCase();
+                                    document.getElementById("composer").value = piece;
                                 }
                             } else if (piece[reader] == "-"){
                                 count +=1;
@@ -373,11 +408,13 @@
                                 console.log("ERROR: Cannot understand your music ;-)");
                                 clearInterval(interval);
                                 read(); //toggle back off
+                                document.getElementById("composer").value = piece.toLowerCase();
                             }
 
                             if((piece.endsWith(";") && count == end)){
                                 clearInterval(interval);
                                 read(); //toggle back off
+                                document.getElementById("composer").value = piece.toLowerCase();
                             }
 
                             if(!reading){
@@ -560,6 +597,23 @@
                     }
                 }
             };
+
+            var sample = (piece) => {
+                if (!recording && !reading) {
+                    switch (piece) {
+                        case "beethoven":
+                            document.getElementById("composer").value = "----e4-d4-e4-d4-e4-b3-d4-c4-a3a2----c3-e3-a3-b3e2----e3-g3-b3-c4a2----e3-e4-d4-e4-d4-e4-b3-d4-c4-a3a2-----c3-e3-a3-b3e2----e3-c4-b3-a3a2----b3-c4-d4-e4c3----g3-f4-e4-d4b2----f3-e4-d4-c4a2----e3-d4-c4-b3g2------e4-d4-e4-d4-e4-b3-d4-c4-a3a2----c3-e3-a3-b3e2----e3-g3-b3-c4a2----e3-e4-d4-e4-d4-e4-b3-d4-c4-a3a2----c3-e3-a3-b3e2----e3-c4-b3-a3a2e3----a2--;";
+                            break;
+                        case "titanic":
+                            document.getElementById("composer").value = "--------c4----------c4---c4-------c4--------b3------c4----------c4--------b3-------c4---------d4------e4--------d4---d4-----; work in progress :-)";
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+            }
+
         </script>
     </body>
 </html>
